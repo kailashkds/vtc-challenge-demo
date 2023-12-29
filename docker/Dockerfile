@@ -1,12 +1,15 @@
 FROM alpine:3.18
 
-RUN apk --no-cache add php82 php82-fpm php82-mysqli php82-json php82-openssl php82-curl \
-    php82-zlib php82-xml php82-phar php82-intl php82-dom php82-xmlreader php82-ctype php82-session \
-    php82-mbstring php82-gd php82-iconv php82-simplexml php82-sodium php82-pdo php82-pdo_mysql php82-tokenizer \
-    php82-fileinfo php82-zip imagemagick php82-pecl-imagick php82-pecl-xdebug php82-xmlwriter \
+RUN apk --no-cache add php81 php81-fpm php81-mysqli php81-json php81-openssl php81-curl \
+    php81-zlib php81-xml php81-phar php81-intl php81-dom php81-xmlreader php81-ctype php81-session \
+    php81-mbstring php81-gd php81-iconv php81-simplexml php81-sodium php81-pdo php81-pdo_mysql php81-tokenizer \
+    php81-fileinfo php81-zip imagemagick php81-pecl-imagick php81-pecl-xdebug php81-xmlwriter \
     nginx supervisor curl bash vim
 
-RUN ln -s /usr/bin/php82 /usr/bin/php
+# Update the package repository and install Node.js and Yarn
+RUN apk --no-cache add nodejs npm yarn
+
+#RUN ln -s /usr/bin/php81 /usr/bin/php
 
 # Configure nginx
 COPY config/xdebug.ini /etc/php7/conf.d/xdebug.ini
