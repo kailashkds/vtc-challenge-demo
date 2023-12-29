@@ -5,3 +5,14 @@ controllers:
 kernel:
     resource: ../../src/Kernel.php
     type: annotation
+
+react_catch_all:
+    path: /{reactRouting}
+    controller: App\Controller\ReactController::index
+    requirements:
+        reactRouting: '.*'
+
+
+
+
+
