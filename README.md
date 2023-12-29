@@ -1,3 +1,21 @@
+## VTC Challenge Answer
+
+I have update the Docker just use one command given bellow and everything will work out of box
+
+`docker-compose up -d`
+
+Run: `http://localhost:81/` and start browsing it.
+
+Email are saved in file as requested. In order to reach there execute below commands or you can also use IDE for it.
+
+`docker-exec -it {container-name} bash`
+
+`cd /var/www/html/var/email`
+
+`cat {emailaddress}.txt`
+
+**I am sorry I cound not complete it in 24 hours becuase there was some ugent deliveries and I had to focus on that as it year end.** 
+
 # Welcome to VTC Challenge
 
 This challenge is created to test your knowledge of creating Symfony Applications with SPA Frontend build using ReactJS.
